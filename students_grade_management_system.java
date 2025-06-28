@@ -5,13 +5,15 @@ public class students_grade_management_system {
         Scanner sc =new Scanner(System.in);
         System.out.print("Enter number of students: ");
         int numbers = sc.nextInt();
+        System.out.print("\n");
 
         String name[] = new String[numbers];
         int marks [] = new int[numbers];
         char grade[] = new char[numbers];
         for(int i = 0; i < numbers; i++){
-            System.out.print("\nEnter name of student " + (i+1) + ": ");
-            name[i] = sc.next();
+            System.out.print("Enter name of student " + (i+1) + ": ");
+            sc.nextLine();
+            name[i] = sc.nextLine();
             System.out.print("Enter marks of " + name[i] + ": ");
             marks[i] = sc.nextInt();
             if(marks[i] >= 90){
@@ -36,7 +38,8 @@ public class students_grade_management_system {
 
         System.out.print("\n");
         System.out.print("Enter name of student: ");
-        String search = sc.next();
+        sc.nextLine();
+        String search = sc.nextLine();
         boolean found = false;
 
         for(int i = 0; i < numbers; i++){
@@ -49,5 +52,7 @@ public class students_grade_management_system {
         if(!found){
             System.out.println("Record not found........");
         }
+        
+        sc.close();
     }
 }
